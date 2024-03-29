@@ -25,6 +25,8 @@ public class ReciprocalArraySumTest extends TestCase {
         for (int i = 0; i < N; i++) {
             input[i] = rand.nextInt(100);
             // No se permiten valores en cero en el arreglo de entrada para evitar la división por cero
+
+            // @audit-info se intenta la i hasta que su valor en el arreglo no sea cero
             if (input[i] == 0.0) {
                 i--;
             }
@@ -36,7 +38,7 @@ public class ReciprocalArraySumTest extends TestCase {
     /**
      * Una implementación de referencia de seqArraysum, en caso de que alguno del archvo del código fuente principal sea modificado accidentalmente.
      *
-     * @param input Enrada para calcular secuencialmente la suma de los recíprocos
+     * @param input Entrada para calcular secuencialmente la suma de los recíprocos
      * @return Suma de los recíprocos de la entrada
      */
     private double seqArraySum(final double[] input) {

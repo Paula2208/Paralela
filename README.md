@@ -78,7 +78,7 @@ cd ejercicio_2 && mvn test && cd ..
 1. Descargar este repositorio
 
 ```bash
-git clone
+git clone https://github.com/Paula2208/Paralela.git
 cd Paralela
 ```
 
