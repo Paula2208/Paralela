@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.edu.unal.paralela.ReciprocalArraySumTest" time="35.58" tests="4" errors="0" skipped="0" failures="2">
+<testsuite name="co.edu.unal.paralela.StudentAnalyticsTest" time="2.043" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="21.0.2+13-LTS-58"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:/Users/paula/Documents/Coding/Paralela/ejercicio_1"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:/Users/paula/Documents/Coding/Paralela/ejercicio_2"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="CO"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\paula\Documents\Coding\Paralela\ejercicio_1"/>
+    <property name="user.dir" value="C:\Users\paula\Documents\Coding\Paralela\ejercicio_2"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
     <property name="os.arch" value="amd64"/>
@@ -60,24 +60,10 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testParManyTaskTwoHundredMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="17.615">
-    <failure message="Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse  9,600000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 1,988636x veces" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse  9,600000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 1,988636x veces
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at co.edu.unal.paralela.ReciprocalArraySumTest.testParManyTaskTwoHundredMillion(ReciprocalArraySumTest.java:163)
-</failure>
-    <system-out><![CDATA[Test 4 - Cientos de Millones de elementos con 12 tareas paralelas. Minimal Expected: 9.600000000000001. Speedup: 1.9886363636363635
-]]></system-out>
-  </testcase>
-  <testcase name="testParSimpleTwoHundredMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="17.59"/>
-  <testcase name="testParManyTaskTwoMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="0.172">
-    <failure message="Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse 7,200000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 1,000000x veces" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse 7,200000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 1,000000x veces
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at co.edu.unal.paralela.ReciprocalArraySumTest.testParManyTaskTwoMillion(ReciprocalArraySumTest.java:148)
-</failure>
-    <system-out><![CDATA[Test 3 - Millones de elementos con 12 tareas paralelas. Minimal Expected: 7.199999999999999. Speedup: 1.0
-]]></system-out>
-  </testcase>
-  <testcase name="testParSimpleTwoMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="0.203"/>
+  <testcase name="testAverageAgeOfEnrolledStudents" classname="co.edu.unal.paralela.StudentAnalyticsTest" time="0.273"/>
+  <testcase name="testMostCommonFirstNameOfInactiveStudentsPerf" classname="co.edu.unal.paralela.StudentAnalyticsTest" time="0.816"/>
+  <testcase name="testCountNumberOfFailedStudentsOlderThan20Perf" classname="co.edu.unal.paralela.StudentAnalyticsTest" time="0.297"/>
+  <testcase name="testCountNumberOfFailedStudentsOlderThan20" classname="co.edu.unal.paralela.StudentAnalyticsTest" time="0.093"/>
+  <testcase name="testAverageAgeOfEnrolledStudentsPerf" classname="co.edu.unal.paralela.StudentAnalyticsTest" time="0.329"/>
+  <testcase name="testMostCommonFirstNameOfInactiveStudents" classname="co.edu.unal.paralela.StudentAnalyticsTest" time="0.235"/>
 </testsuite>

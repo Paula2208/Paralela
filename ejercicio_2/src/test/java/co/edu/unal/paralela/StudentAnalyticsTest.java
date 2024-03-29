@@ -72,6 +72,8 @@ public class StudentAnalyticsTest extends TestCase {
     public void testAverageAgeOfEnrolledStudentsPerf() {
         final int ncores = getNCores();
         final double speedup = averageAgeOfEnrolledStudentsHelper(REPEATS);
+        System.out.println("Test 1 - Promedio de edad. Minimal Expected: " + 1.2 + ". Speedup: " + speedup);
+
         String msg = "Expected parallel version to run at least 1.2x faster but speedup was " + speedup;
         assertTrue(msg, speedup > 1.2);
     }
@@ -114,6 +116,8 @@ public class StudentAnalyticsTest extends TestCase {
         final int ncores = getNCores();
         final double speedup = mostCommonFirstNameOfInactiveStudentsHelper(REPEATS);
         final double expectedSpeedup = (double)ncores * 0.5;
+        System.out.println("Test 2 - Nombres más comunes. Minimal Expected: " + expectedSpeedup + ". Speedup: " + speedup);
+
         String msg = "Expected speedup to be at least " + expectedSpeedup + " but was " + speedup;
         assertTrue(msg, speedup >= expectedSpeedup);
 
@@ -156,6 +160,9 @@ public class StudentAnalyticsTest extends TestCase {
     public void testCountNumberOfFailedStudentsOlderThan20Perf() {
         final int ncores = getNCores();
         final double speedup = countNumberOfFailedStudentsOlderThan20Helper(REPEATS);
+
+        System.out.println("Test 3 - Failed students (20). Minimal Expected: " + 1.2 + ". Speedup: " + speedup);
+
         String msg = "Expected parallel version to run at least 1.2x faster but speedup was " + speedup;
         assertTrue(msg, speedup > 1.2);
     }
