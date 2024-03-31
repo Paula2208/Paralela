@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.Arrays;
 
 /**
  * Una clase 'envoltorio' (wrapper) para varios métodos analíticos.
@@ -48,12 +49,19 @@ public final class StudentAnalytics {
      */
     public double averageAgeOfEnrolledStudentsParallelStream(
             final Student[] studentArray) {
-        return Stream.of(studentArray) // @audit-info Se crea un stream del array de estudiantes
+        /*return Stream.of(studentArray) // @audit-info Se crea un stream del array de estudiantes
                 .parallel() // @audit-info Se paralelizan los métodos aplicados al stream
                 .filter(Student::checkIsCurrent) // @audit-info Revisa si el estudiante está activo
                 .mapToDouble(Student::getAge) // @audit-info Trae la edad del estudiante
                 .average() // @audit-info Hace un promedio de la edad
                 .orElse(0.0); // @audit-info Retorna la edad promedio o 0.0 si no se pudo calcular
+                              //*/
+        return Arrays.stream(studentArray)
+            .parallel()
+            .filter(student -> student.checkIsCurrent())
+            .mapToDouble(student -> student.getAge())
+            .average()
+            .getAsDouble();
     }
 
     /**
