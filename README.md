@@ -96,7 +96,7 @@ mvn -v
 5. Instalar y configurar en Maven el framework pdcp [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi).
 
 ```bash
-cd PDCP && mvn install
+cd PCDP && mvn install
 ```
 
 6. Compilar el ejercicio deseado con las instrucciones dispuestas en el apartado de [Compilación de Ejercicios](#id1). 
