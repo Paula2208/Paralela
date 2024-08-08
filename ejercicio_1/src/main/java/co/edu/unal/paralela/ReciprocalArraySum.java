@@ -164,8 +164,10 @@ public final class ReciprocalArraySum {
                 }
             }
             else {
+                // @audit-info Computa todas las subtareas que conciernen a cada trozo
                 Collection<ReciprocalArraySumTask> subTasks = ForkJoinTask.invokeAll(subTask());
-                
+
+                // @audit-info Suma lo computado
                 for(ReciprocalArraySumTask subTask : subTasks) {
                     value += subTask.getValue();
                 }
@@ -202,6 +204,7 @@ public final class ReciprocalArraySum {
     protected static double parArraySum(final double[] input) {
         assert input.length % 2 == 0;
 
+        // @audit-info Computa bajo dos tareas
         return parManyTaskArraySum(input, 2);
     }
 
@@ -218,11 +221,20 @@ public final class ReciprocalArraySum {
      */
     protected static double parManyTaskArraySum(final double[] input,
             final int numTasks) {
+        
+        // @audit-info Crea las subtareas
         ReciprocalArraySumTask sumTask = new ReciprocalArraySumTask(0, input.length, input, numTasks);
+
+        // @audit-info Crea el pool de tareas
         ForkJoinPool pool = new ForkJoinPool(numTasks);
+
+        // @audit-info Computa la tarea dada (que son las subtareas)
         pool.invoke(sumTask);
+
+        // @audit-info Activa el compute()
         sumTask.invoke();
 
+        // @audit-info Retorna la suma final
         return sumTask.getValue();
     }
 }
